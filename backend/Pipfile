@@ -4,6 +4,12 @@ url = "https://pypi.org/simple"
 verify_ssl = true
 
 [dev-packages]
+django = "*"
+django-rest-framework = "*"
+djangorestframework-jwt = "*"
+django-cors-headers = "*"
+django-imagekit = "*"
+django-summernote = "*"
 
 [packages]
 
