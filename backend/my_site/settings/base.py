@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 """
 
 import sys
-import os
+# import os
 from os.path import dirname, join
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -48,6 +48,8 @@ INSTALLED_APPS = [
 
     'rest_framework',
     'corsheaders',
+
+    'apps.api',
 ]
 
 MIDDLEWARE = [
@@ -143,6 +145,10 @@ REST_FRAMEWORK = {
 CORS_ORIGIN_WHITELIST = (
     'localhost:3000',
 )
+
+JWT_AUTH = {
+    'JWT_RESPONSE_PAYLOAD_HANDLER': 'my_site.utils.my_jwt_response_handler'
+}
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
