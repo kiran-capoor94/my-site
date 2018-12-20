@@ -1,4 +1,6 @@
-# my-site
+# Introduction
+
+Basic App to showcase my work and blogs to spread my knowledge.
 
 # TO DO
 
