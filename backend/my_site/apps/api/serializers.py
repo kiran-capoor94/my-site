@@ -1,9 +1,9 @@
 from rest_framework import serializers
 from rest_framework_jwt.settings import api_settings
-# from django.contrib.auth.models import User
-from django.conf import settings
+from django.contrib.auth.models import User
+# from django.conf import settings
 
-User = settings.AUTH_USER_MODEL
+# User = settings.AUTH_USER_MODEL
 
 
 class UserSerializer(serializers.ModelSerializer):

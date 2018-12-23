@@ -1,113 +1,62 @@
 import React, { Component } from 'react';
-import Nav from './components/Nav';
-import LoginForm from './components/LoginForm';
-import SignupForm from './components/SignupForm';
-import './App.css';
+import NavBar from './components/NavBar';
+import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider';
+import { createMuiTheme } from '@material-ui/core/styles';
+import Banner from './components/Banner';
 
-class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      displayed_form: '',
-      logged_in: localStorage.getItem('token') ? true : false,
-      username: ''
-    };
-  }
-
-  componentDidMount() {
-    if (this.state.logged_in) {
-      fetch('http://localhost:8000/core/current_user/', {
-        headers: {
-          Authorization: `JWT ${localStorage.getItem('token')}`
+// All the following keys are optional.
+// We try our best to provide a great default value.
+const themeRedGeese = createMuiTheme({
+    palette: {
+        primary: {
+            main: '#212121',
+            light: "rgb(77, 77, 77)",
+            dark: "rgb(23, 23, 23)",
+            contrastText: "#fff"
+        },
+        secondary: {
+            main: '#b71c1c',
+        },
+        appBar:{
+            color: 'primary'
+        },
+        tonalOffset: 0.2,
+        background: {
+            paper: "#fff",
+            default: "#fafafa"
+        },
+        surface: {
+            base: "#ECEFF1",
+            light: "ffffff",
+            dark: "B0BEC5"
+        },
+        backdrop: {
+            backgroundColor: 'surface'
         }
-      })
-        .then(res => res.json())
-        .then(json => {
-          this.setState({ username: json.username });
-        });
+    },
+    typography: {
+        useNextVariants: true,
+        button: {
+            textTransform: "uppercase",
+            color: "rgba(0, 0, 0, 0.87)",
+            fontFamily: "\"Roboto\", \"Helvetica\", \"Arial\", sans-serif",
+            fontSize: "0.875rem",
+            fontWeight: 500
+        },
+    },
+});
+class App extends Component {
+    render() {
+        return (
+            <MuiThemeProvider theme={themeRedGeese}>
+                <div>
+                    <NavBar />
+                </div>
+                <Banner />
+                
+            </MuiThemeProvider>
+        );
     }
-  }
-
-  handle_login = (e, data) => {
-    e.preventDefault();
-    fetch('http://localhost:8000/token-auth/', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(data)
-    })
-      .then(res => res.json())
-      .then(json => {
-        localStorage.setItem('token', json.token);
-        this.setState({
-          logged_in: true,
-          displayed_form: '',
-          username: json.user.username
-        });
-      });
-  };
-
-  handle_signup = (e, data) => {
-    e.preventDefault();
-    fetch('http://localhost:8000/core/users/', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(data)
-    })
-      .then(res => res.json())
-      .then(json => {
-        localStorage.setItem('token', json.token);
-        this.setState({
-          logged_in: true,
-          displayed_form: '',
-          username: json.username
-        });
-      });
-  };
-
-  handle_logout = () => {
-    localStorage.removeItem('token');
-    this.setState({ logged_in: false, username: '' });
-  };
-
-  display_form = form => {
-    this.setState({
-      displayed_form: form
-    });
-  };
-
-  render() {
-    let form;
-    switch (this.state.displayed_form) {
-      case 'login':
-        form = <LoginForm handle_login={this.handle_login} />;
-        break;
-      case 'signup':
-        form = <SignupForm handle_signup={this.handle_signup} />;
-        break;
-      default:
-        form = null;
-    }
-
-    return (
-      <div className="App">
-        <Nav
-          logged_in={this.state.logged_in}
-          display_form={this.display_form}
-          handle_logout={this.handle_logout}
-        />
-        {form}
-        <h3>
-          {this.state.logged_in
-            ? `Hello, ${this.state.username}`
-            : 'Please Log In'}
-        </h3>
-      </div>
-    );
-  }
 }
 
 export default App;
