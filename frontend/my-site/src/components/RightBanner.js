@@ -32,6 +32,24 @@ const styles = themeRedGeese => ({
         paddingTop: themeRedGeese.spacing.unit * 46,
         paddingLeft: themeRedGeese.spacing.unit * 5,
         paddingBottom: themeRedGeese.spacing.unit * 1,
+        paddingRight: themeRedGeese.spacing.unit * 5,
+        
+        [themeRedGeese.breakpoints.between('lg','xl')]: {
+            paddingTop: themeRedGeese.spacing.unit * 42,
+            paddingRight: themeRedGeese.spacing.unit * 5.2,
+            fontSize: '5vw',
+        },
+        [themeRedGeese.breakpoints.up('xl')]: {
+            paddingTop: themeRedGeese.spacing.unit * 46,
+            paddingRight: themeRedGeese.spacing.unit * 8.2,
+            fontSize: '7vw'
+        }
+    },
+    subtitleBanner: {
+        textAlign: 'left',
+        paddingLeft: themeRedGeese.spacing.unit * 5,
+        paddingTop: themeRedGeese.spacing.unit * 1,
+        paddingBottom: themeRedGeese.spacing.unit * 1,
     }
 
 });
@@ -46,7 +64,7 @@ function RightBanner(props) {
             <Typography variant="h1" color="secondary" className={classes.titleName}>
                 Kiran Capoor
             </Typography>
-            <Typography variant="h3" color="primary">
+            <Typography variant="h3" color="primary" className={classes.subtitleBanner}>
                 Software Engineer
             </Typography>
             <IconList />

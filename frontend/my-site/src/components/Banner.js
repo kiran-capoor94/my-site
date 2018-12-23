@@ -46,14 +46,14 @@ function Banner(props) {
         <div className={classes.root}>
             <Grid container spacing={0}>
                 <Hidden xsDown>
-                    <Grid item lg={8} md={8}>
+                    <Grid item lg={8} md={8} xlg={8}>
                         <Paper className={classes.paperRed}>
                             <Typography variant="h6" color="inherit" className={classes.grow}>
                                 Kiran Capoor
                         </Typography>
                         </Paper>
                     </Grid>
-                    <Grid item lg={4} md={4}>
+                    <Grid item lg={4} md={4} xlg={4}>
                         <RightBanner />
                     </Grid>
                 </Hidden>
