@@ -1,10 +1,7 @@
 import React from "react";
 import PropTypes from 'prop-types';
-// import Backdrop from '@material-ui/core/Backdrop';
 import { withStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
-// import Grid from '@material-ui/core/Grid';
-// import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
 import IconList from "./IconList";
 
@@ -15,8 +12,14 @@ const styles = themeRedGeese => ({
     paperFixed: {
         flexGrow: 1,
         position:'fixed',
-        height: '94vh',
-        maxHeight: '100%',
+        height: '100%',
+        maxHeight: '87vh',
+        [themeRedGeese.breakpoints.between('md','lg')]: {
+            maxHeight: '87vh',
+        },
+        [themeRedGeese.breakpoints.only('lg')]: {
+            maxHeight: '88.5vh',
+        },
         textAlign: 'center',
         paddingTop: themeRedGeese.spacing.unit * 4.6,
         borderRadius: 0,
@@ -48,8 +51,13 @@ const styles = themeRedGeese => ({
     subtitleBanner: {
         textAlign: 'left',
         paddingLeft: themeRedGeese.spacing.unit * 5,
-        paddingTop: themeRedGeese.spacing.unit * 1,
-        paddingBottom: themeRedGeese.spacing.unit * 1,
+        paddingTop: themeRedGeese.spacing.unit * 2,
+        paddingBottom: themeRedGeese.spacing.unit * 0.5,
+
+        [themeRedGeese.breakpoints.down('xl')]: {
+            fontSize: '3vw'
+        }
+
     }
 
 });

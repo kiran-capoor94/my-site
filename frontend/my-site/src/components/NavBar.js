@@ -50,7 +50,7 @@ function NavBar(props) {
                         <Button className={classes.navButton} variant="text" color="inherit">Portfolio</Button>
                         <Button className={classes.navButton} variant="text" color="inherit">Services</Button>
                         <Button className={classes.navButton} variant="text" color="inherit">My Blog</Button>
-                        <Button variant="contained" color="secondary">Contact</Button>
+                        <Button className={classes.navButton} variant="contained" color="secondary">Contact</Button>
                     </Toolbar>
                 </AppBar>
             </div>

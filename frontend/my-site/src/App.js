@@ -44,6 +44,22 @@ const themeRedGeese = createMuiTheme({
             fontWeight: 500
         },
     },
+    breakpoints: {
+        keys: [
+          "xs",
+          "sm",
+          "md",
+          "lg",
+          "xl"
+        ],
+        values: {
+          xs: 0,
+          lg: 1280,
+          sm: 600,
+          xl: 1920,
+          md: 960
+        }
+      },
 });
 class App extends Component {
     render() {
