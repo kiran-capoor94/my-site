@@ -3,12 +3,20 @@ import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import AboutMe from "./AboutMe";
 import Services from "./Services";
+import Portfolio from "./Portfolio";
 
-const styles = () => ({
+const styles = themeRedGeese => ({
     root: {
         flexGrow: 1,
-    },
-    
+        height:'90.5vh',
+        maxHeight: '87vh',
+        [themeRedGeese.breakpoints.between('md','lg')]: {
+            maxHeight: '87vh',
+        },
+        [themeRedGeese.breakpoints.only('lg')]: {
+            maxHeight: '90.5vh',
+        },
+    }, 
 });
 
 function LeftBanner(props) {
@@ -17,6 +25,7 @@ function LeftBanner(props) {
         <div className={classes.root}>
             <AboutMe />
             <Services />
+            {/* <Portfolio /> */}
         </div>
     );
 

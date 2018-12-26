@@ -4,17 +4,15 @@ import { withStyles } from '@material-ui/core/styles';
 import { Paper, Typography, Divider } from '@material-ui/core';
 
 const styles = themeRedGeese => ({
-    root: {
-        flexGrow: 1,
-    },
     paperRed: {
         paddingTop: themeRedGeese.spacing.unit * 5,
         paddingBottom: themeRedGeese.spacing.unit * 5,
-        height: '100%',
+        height: '90.5vh',
         textAlign: 'center',
         background: themeRedGeese.palette.secondary.main,
-        borderRadius: 0,
-        color: 'white'
+        color: 'white',
+        zIndex:'1009',
+        flexGrow: 1,
     },
     dividerSm: {
         marginRight: '30%',
@@ -39,29 +37,27 @@ const styles = themeRedGeese => ({
 function AboutMe(props) {
     const { classes } = props;
     return (
-        <div className={classes.root}>
-            <Paper className={classes.paperRed} elevation={1}>
-                <Typography variant="h3" className={classes.titleBanner}>
-                    About Me
+        <Paper className={classes.paperRed} elevation={24} square={true} component={"section"}>
+            <Typography variant="h3" className={classes.titleBanner}>
+                About Me
                 </Typography>
-                <Divider className={classes.dividerSm} variant="middle" elevation={4} />
-                <Typography variant="body1" className={classes.bodyBanner}>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            <Divider className={classes.dividerSm} variant="middle" elevation={4} />
+            <Typography variant="body1" className={classes.bodyBanner}>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                 </Typography>
-                <Typography variant="body1" className={classes.bodyBanner}>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            <Typography variant="body1" className={classes.bodyBanner}>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                 </Typography>
-                <Typography variant="body1" className={classes.bodyBanner}>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            <Typography variant="body1" className={classes.bodyBanner}>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                 </Typography>
-                <Typography variant="body1" className={classes.bodyBanner}>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            <Typography variant="body1" className={classes.bodyBanner}>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                 </Typography>
-                <Typography variant="body1" className={classes.bodyBanner}>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            <Typography variant="body1" className={classes.bodyBanner}>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                 </Typography>
-            </Paper>
-        </div>
+        </Paper>
     );
 }
 

@@ -18,7 +18,7 @@ const styles = themeRedGeese => ({
             maxHeight: '87vh',
         },
         [themeRedGeese.breakpoints.only('lg')]: {
-            maxHeight: '88.5vh',
+            maxHeight: '90.5vh',
         },
         textAlign: 'center',
         paddingTop: themeRedGeese.spacing.unit * 4.6,

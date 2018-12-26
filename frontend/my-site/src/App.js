@@ -59,7 +59,10 @@ const themeRedGeese = createMuiTheme({
           xl: 1920,
           md: 960
         }
-      },
+    },
+    MuiCardMedia: {
+        backgroundSize: 'contain',
+    }
 });
 class App extends Component {
     render() {
