@@ -4,6 +4,9 @@ import { withStyles } from '@material-ui/core/styles';
 import AboutMe from "./AboutMe";
 import Services from "./Services";
 import Portfolio from "./Portfolio";
+import MyBlog from "./MyBlog";
+
+
 
 const styles = themeRedGeese => ({
     root: {
@@ -25,7 +28,8 @@ function LeftBanner(props) {
         <div className={classes.root}>
             <AboutMe />
             <Services />
-            {/* <Portfolio /> */}
+            <Portfolio />
+            <MyBlog />
         </div>
     );
 

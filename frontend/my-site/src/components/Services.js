@@ -71,7 +71,7 @@ const styles = themeRedGeese => ({
 function Services(props) {
     const { classes } = props;
     return (
-        <Paper className={classes.paperWhite} elevation={4}>
+        <Paper className={classes.paperWhite} elevation={4} component={"section"}>
             <Typography variant="h3" className={classes.titleBanner}>
                 What I Do?
                 </Typography>

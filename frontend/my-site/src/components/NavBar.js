@@ -7,10 +7,11 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
+// import AboutMe from './AboutMe';
 
 
 const styles = themeRedGeese => ({
-    primary: { main: '#212121' },
+    primary: { main: '#000' },
     secondary: { main: '#D50000' },
     root: {
         flexGrow: 1,
@@ -34,6 +35,8 @@ const styles = themeRedGeese => ({
     },
 });
 
+
+
 function NavBar(props) {
     const { classes } = props;
     return (
@@ -46,7 +49,7 @@ function NavBar(props) {
                         <Typography variant="h6" color="inherit" className={classes.grow}>
                             Kiran Capoor
                         </Typography>
-                        <Button className={classes.navButton} variant="contained" color="secondary">About Me</Button>
+                        <Button className={classes.navButton} variant="contained" color="secondary" id='abbtn'>About Me</Button>
                         <Button className={classes.navButton} variant="text" color="inherit">Portfolio</Button>
                         <Button className={classes.navButton} variant="text" color="inherit">Services</Button>
                         <Button className={classes.navButton} variant="text" color="inherit">My Blog</Button>

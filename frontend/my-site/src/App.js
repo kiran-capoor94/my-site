@@ -9,7 +9,7 @@ import Banner from './components/Banner';
 const themeRedGeese = createMuiTheme({
     palette: {
         primary: {
-            main: '#212121',
+            main: '#000',
             light: "rgb(77, 77, 77)",
             dark: "rgb(23, 23, 23)",
             contrastText: "#fff"
