@@ -5,11 +5,11 @@ services:
     image: postgres
     ports:
       - "5432:5432"
-  django:
-    build: ./backend/
+  backend:
+    build: ./backend
     command: ["python", "manage.py", "runserver", "0.0.0.0:8000"]
     volumes:
-      - ./my_site/apps/api:/app/api
+      - ./my_site/apps/
     ports:
       - "8000:8000"
     depends_on:
