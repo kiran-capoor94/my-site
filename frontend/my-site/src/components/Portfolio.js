@@ -55,24 +55,28 @@ const tileData = [
         title: 'Image',
         author: 'author',
         cols: 3,
+        url: 'www.amazingworkplaces.co.in/'
     },
     {
         img: br,
         title: 'Image',
         author: 'author',
         cols: 2,
+        url: 'www.brandrecall.co.in/'
     },
     {
         img: tp,
         title: 'Seeall',
         author: 'author',
         cols: 1,
+        url: 'www.1oneteam.com/'
     },
     {
         img: mm,
         title: 'Image',
         author: 'author',
         cols: 3,
+        url: 'www.mindmatrix.com/'
     },
 ];
 
@@ -90,7 +94,9 @@ function ImageGridList(props) {
                 <GridList cellHeight={200} className={classes.gridList} cols={3}>
                     {tileData.map(tile => (
                         <GridListTile key={tile.img} cols={tile.cols || 1}>
-                            <img src={tile.img} alt={tile.title} />
+                            {/* <a href={title.url}> */}
+                                <img src={tile.img} alt={tile.title} />
+                            {/* </a> */}
                         </GridListTile>
                     ))}
                 </GridList>
